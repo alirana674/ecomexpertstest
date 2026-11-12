@@ -1,0 +1,78 @@
+/*
+ * Design tokens measured from the supplied Figma screenshots (screenshots/).
+ * Colors were pixel-sampled from web.png (1439px artboard).
+ * Typography sizes other than the mobile heading are estimates and may be
+ * adjusted here without touching component styles.
+ */
+:root {
+  /* Colors — confirmed via pixel sampling */
+  --color-primary: #4e2fd2;
+  --color-section-bg: #edf4ff;
+  /* Figma-confirmed: selected card border carries alpha (#4E2FD2 at ~70%) */
+  --color-card-selected-border: #4e2fd2b2;
+  --color-text: #1f1f1f;
+  --color-text-muted: #525457;
+  --color-text-muted-2: #85898e;
+  --color-step-label: #a3a3a3;
+  --color-price-strike: #d8392b;
+  --color-success: #0aa288;
+  --color-variant-selected-bg: #f6fffc;
+  --color-variant-selected-border: #80d1c2;
+  --color-stepper-border: #dae0e6;
+  --color-page-bg: #ffffff;
+  --color-card-bg: #ffffff;
+  --color-divider: #e2e4e9;
+  /* Figma-confirmed text colors (Phase 4 specs) */
+  --color-step-text: #484848;
+  --color-heading-dark: #0b0d10;
+  --color-group-label: #a8b2bd;
+
+  /* Typography */
+  --font-heading: 'Gilroy-Bold', 'Gilroy', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Gilroy', 'Montserrat', system-ui, sans-serif;
+  /* Gilroy weight-specific families (Figma bakes the weight into the family
+     name). Montserrat renders until licensed Gilroy files are added. */
+  --font-gilroy-medium: 'Gilroy-Medium', 'Gilroy', 'Montserrat', system-ui, sans-serif;
+  --font-gilroy-semibold:
+    'Gilroy-SemiBold', 'Gilroy', 'Montserrat', system-ui, sans-serif;
+  --font-gilroy-italic:
+    'Gilroy-RegularItalic', 'Gilroy', 'Montserrat', system-ui, sans-serif;
+
+  /* Confirmed from Figma: mobile heading "Let's get started!" */
+  --heading-mobile-size: 31.88px;
+  --heading-mobile-line-height: 110%;
+  --heading-mobile-letter-spacing: -0.06px;
+
+  /* Estimated type scale (pending Figma confirmation) */
+  --text-xs: 11px; /* STEP X OF 4 labels */
+  --text-sm: 13px; /* badges, group labels */
+  --text-base: 14px; /* descriptions, review items */
+  --text-md: 16px; /* prices, buttons */
+  --text-lg: 18px; /* card titles */
+  --text-xl: 22px; /* step titles */
+  --text-2xl: 28px; /* review panel title */
+
+  /* Layout — Figma-confirmed card specs (Phase 4), measured column widths */
+  --container-max-width: 1200px;
+  --builder-width: 770px;
+  --review-width: 400px;
+  --column-gap: 30px;
+  --card-width: 361.5px;
+  --card-min-height: 159px;
+  --card-gap: 19px;
+  --card-padding: 11px;
+  --card-border-width: 2px;
+  /* (770 − 2×361.5 − 19) / 2 = 14px keeps the confirmed card width exact */
+  --section-padding: 14px;
+
+  /* Radii — card radius confirmed (10px); others measured (±2px) */
+  --radius-card: 10px;
+  --radius-panel: 12px;
+  --radius-button: 8px;
+  --radius-chip: 6px;
+  --radius-pill: 999px;
+  --radius-thumb: 10px;
+
+  /* Breakpoints are used in media queries (cannot reference vars there):
+     desktop ≥ 1100px · tablet 700–1099px · mobile < 700px */
+}

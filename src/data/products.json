@@ -1,0 +1,182 @@
+{
+  "_documentation": [
+    "All prices are integer cents. Per-unit prices are authoritative: every card price, review line total and bundle total is derived from them.",
+    "KNOWN DESIGN DISCREPANCY (Wyze Cam Pan v3): the Figma camera card shows $39.98/$34.98 per unit, but the review panel line totals for qty 2 ($57.98/$47.98) imply $28.99/$23.99 per unit. The review-panel-implied unit prices are used here (provisional, per reviewer instruction) because they keep the reference totals ($238.81 / $187.89 / $50.92 savings) internally consistent. To adopt the card prices instead, change price to 3498 and originalPrice to 3998 below — no code changes needed.",
+    "Sensors, accessories and the plan below are the items confirmed from the review panel of the reference screenshots. Expanded designs for steps 2-4 were not supplied, so no additional products are included.",
+    "Variant image mapping: variants[].image is the full-size per-color shot (card + review); variants[].thumb is the supplied 48px chip thumbnail. Cam v4 and Pan v3 only received 48px thumbs, so their cards fall back to the base product image for every color (documented fallback). Battery Cam Pro's supplied white image is byte-identical to the base image, so white uses the base (no duplicate copy).",
+    "KNOWN ASSET ISSUE: the supplied 'Wyze Cam v4_grey' file is byte-identical to 'Wyze Cam v4_white' — the Grey chip currently shows the white thumbnail. Replace public/assets/products/cameras/wyze-cam-v4/wyze-cam-v4-grey-thumb.png with a real grey asset to correct it; no code change needed."
+  ],
+  "products": [
+    {
+      "id": "wyze-cam-v4",
+      "step": "cameras",
+      "category": "cameras",
+      "title": "Wyze Cam v4",
+      "description": "The clearest Wyze Cam ever made.",
+      "image": "/assets/products/cameras/wyze-cam-v4/wyze-cam-v4.png",
+      "learnMoreUrl": "#",
+      "badge": "Save 22%",
+      "price": 2798,
+      "originalPrice": 3598,
+      "selectionMode": "quantity",
+      "variants": [
+        {
+          "id": "white",
+          "name": "White",
+          "thumb": "/assets/products/cameras/wyze-cam-v4/wyze-cam-v4-white-thumb.png"
+        },
+        {
+          "id": "grey",
+          "name": "Grey",
+          "thumb": "/assets/products/cameras/wyze-cam-v4/wyze-cam-v4-grey-thumb.png"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "thumb": "/assets/products/cameras/wyze-cam-v4/wyze-cam-v4-black-thumb.png"
+        }
+      ],
+      "defaultVariantId": "white",
+      "initialQuantity": { "white": 1 }
+    },
+    {
+      "id": "wyze-cam-pan-v3",
+      "step": "cameras",
+      "category": "cameras",
+      "title": "Wyze Cam Pan v3",
+      "description": "360° pan and 180° tilt security camera.",
+      "image": "/assets/products/cameras/wyze-cam-pan-v3/wyze-cam-pan-v3.png",
+      "learnMoreUrl": "#",
+      "badge": "Save 12%",
+      "price": 2399,
+      "originalPrice": 2899,
+      "selectionMode": "quantity",
+      "variants": [
+        {
+          "id": "white",
+          "name": "White",
+          "thumb": "/assets/products/cameras/wyze-cam-pan-v3/wyze-cam-pan-v3-white-thumb.png"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "thumb": "/assets/products/cameras/wyze-cam-pan-v3/wyze-cam-pan-v3-black-thumb.png"
+        }
+      ],
+      "defaultVariantId": "white",
+      "initialQuantity": { "white": 2 },
+      "dataNotes": "Provisional unit prices implied by the review panel (see _documentation). Figma card showed 3998/3498."
+    },
+    {
+      "id": "wyze-cam-floodlight-v2",
+      "step": "cameras",
+      "category": "cameras",
+      "title": "Wyze Cam Floodlight v2",
+      "description": "2K floodlight camera with a 160° wide-angle view for your garage.",
+      "image": "/assets/products/cameras/wyze-cam-floodlight-v2/wyze-cam-floodlight-v2.png",
+      "learnMoreUrl": "#",
+      "badge": "Save 22%",
+      "price": 6998,
+      "originalPrice": 8998,
+      "selectionMode": "quantity",
+      "variants": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/cameras/wyze-cam-floodlight-v2/wyze-cam-floodlight-v2-white.png"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/cameras/wyze-cam-floodlight-v2/wyze-cam-floodlight-v2-black.png"
+        }
+      ],
+      "defaultVariantId": "white",
+      "initialQuantity": 0
+    },
+    {
+      "id": "wyze-duo-cam-doorbell",
+      "step": "cameras",
+      "category": "cameras",
+      "title": "Wyze Duo Cam Doorbell",
+      "description": "Two cameras. Two views. Double the porch protection.",
+      "image": "/assets/products/cameras/wyze-duo-cam-doorbell/wyze-duo-cam-doorbell.png",
+      "learnMoreUrl": "#",
+      "price": 6998,
+      "selectionMode": "quantity",
+      "initialQuantity": 0
+    },
+    {
+      "id": "wyze-battery-cam-pro",
+      "step": "cameras",
+      "category": "cameras",
+      "title": "Wyze Battery Cam Pro",
+      "description": "Protect anywhere. See everything in 2.5K HDR. No power outlet or electrician needed.",
+      "image": "/assets/products/cameras/wyze-battery-cam-pro/wyze-battery-cam-pro.png",
+      "learnMoreUrl": "#",
+      "price": 8998,
+      "selectionMode": "quantity",
+      "variants": [
+        {
+          "id": "white",
+          "name": "White",
+          "image": "/assets/products/cameras/wyze-battery-cam-pro/wyze-battery-cam-pro.png"
+        },
+        {
+          "id": "black",
+          "name": "Black",
+          "image": "/assets/products/cameras/wyze-battery-cam-pro/wyze-battery-cam-pro-black.png"
+        }
+      ],
+      "defaultVariantId": "white",
+      "initialQuantity": 0
+    },
+    {
+      "id": "cam-unlimited",
+      "step": "plan",
+      "category": "plan",
+      "title": "Cam Unlimited",
+      "image": "/assets/review/cam-unlimited-logo.png",
+      "cardImageSize": 44,
+      "price": 999,
+      "originalPrice": 1299,
+      "priceNote": "/mo",
+      "selectionMode": "single",
+      "initialQuantity": 1
+    },
+    {
+      "id": "wyze-sense-motion-sensor",
+      "step": "sensors",
+      "category": "sensors",
+      "title": "Wyze Sense Motion Sensor",
+      "image": "/assets/products/sensors/wyze-sense-motion-sensor/wyze-sense-motion-sensor.png",
+      "price": 2999,
+      "selectionMode": "quantity",
+      "initialQuantity": 2
+    },
+    {
+      "id": "wyze-sense-hub",
+      "step": "sensors",
+      "category": "sensors",
+      "title": "Wyze Sense Hub",
+      "reviewTitle": "Wyze Sense Hub (Required)",
+      "image": "/assets/products/sensors/wyze-sense-hub/wyze-sense-hub.png",
+      "price": 0,
+      "originalPrice": 2992,
+      "selectionMode": "quantity",
+      "required": true,
+      "minQuantity": 1,
+      "initialQuantity": 1
+    },
+    {
+      "id": "wyze-microsd-256gb",
+      "step": "protection",
+      "category": "accessories",
+      "title": "Wyze MicroSD Card (256GB)",
+      "image": "/assets/products/accessories/wyze-microsd-256gb/wyze-microsd-256gb.png",
+      "price": 2098,
+      "selectionMode": "quantity",
+      "initialQuantity": 2
+    }
+  ]
+}

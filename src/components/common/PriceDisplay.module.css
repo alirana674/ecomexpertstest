@@ -1,0 +1,68 @@
+.prices {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+}
+
+.inline {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.original {
+  text-decoration: line-through;
+}
+
+/* Product cards: red strikethrough, dark-gray current price */
+.card .original {
+  color: var(--color-price-strike);
+  font-size: var(--text-md);
+}
+
+.card .current {
+  color: var(--color-text-muted);
+  font-size: var(--text-md);
+  font-weight: 500;
+}
+
+/* Review panel: gray strikethrough, purple current price.
+   Figma-confirmed (Phase 4): struck original matches the current price size. */
+.review .original {
+  color: var(--color-text-muted-2);
+  font-size: 15px;
+}
+
+.review .current {
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Tablet/mobile vertical cards show prices inline (reference: web-full.png) */
+@media (max-width: 1099px) {
+  .card {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+  }
+
+  .card .original,
+  .card .current {
+    font-size: 12.5px;
+  }
+
+  .card {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+/* Mobile review rows: slightly smaller prices free up name width at 390px */
+@media (max-width: 699px) {
+  .review .original,
+  .review .current {
+    font-size: 14px;
+  }
+}

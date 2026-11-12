@@ -1,0 +1,35 @@
+.item {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.name {
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--color-text);
+  line-height: 1.35;
+}
+
+/* Mobile (ReviewMobile.png): tighter rows so every product title fits on one
+   line at 390px (reference shows single-line names). The thumb override needs
+   !important because ProductThumb sizes via inline style. */
+@media (max-width: 699px) {
+  .item {
+    grid-template-columns: 40px minmax(0, 1fr) auto auto;
+    gap: 6px;
+    padding: 8px 0;
+  }
+
+  .item > span:first-child {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .name {
+    font-size: 12px;
+    letter-spacing: -0.2px;
+  }
+}

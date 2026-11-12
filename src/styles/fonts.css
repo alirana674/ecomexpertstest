@@ -1,0 +1,55 @@
+/*
+ * The design's confirmed fonts are the Gilroy family (commercial, NOT bundled):
+ * Gilroy-Bold (mobile heading), Gilroy-Medium (step labels, card descriptions),
+ * Gilroy-SemiBold (step titles), Gilroy-RegularItalic (save-for-later link).
+ * Montserrat (Google Fonts, loaded in index.html) is the documented fallback.
+ *
+ * To enable Gilroy: place licensed font files in public/fonts/ and uncomment.
+ * No other change is required — the token font stacks already prefer Gilroy.
+ * Note: Figma reports weight 400 for these families because the weight is
+ * baked into the family name; the declarations below map them to the CSS
+ * weights the stylesheets use, so the Montserrat fallback also renders with
+ * the intended visual weight.
+ */
+
+/*
+@font-face {
+  font-family: 'Gilroy-Bold';
+  src: url('/fonts/Gilroy-Bold.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy-Medium';
+  src: url('/fonts/Gilroy-Medium.woff2') format('woff2');
+  font-weight: 400 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy-SemiBold';
+  src: url('/fonts/Gilroy-SemiBold.woff2') format('woff2');
+  font-weight: 400 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gilroy-RegularItalic';
+  src: url('/fonts/Gilroy-RegularItalic.woff2') format('woff2');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+*/

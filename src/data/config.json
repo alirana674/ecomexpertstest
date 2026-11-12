@@ -1,0 +1,36 @@
+{
+  "_documentation": [
+    "financingLabel is a literal string from the design. The rule producing $19.19/mo is unconfirmed, so it intentionally does not recalculate when the bundle changes (documented limitation).",
+    "Shipping prices are integer cents. Shipping is display-only: it is excluded from bundle totals, matching the reference arithmetic."
+  ],
+  "steps": [
+    {
+      "id": "cameras",
+      "title": "Choose your cameras",
+      "icon": "/assets/sections/cameras/step-icon.png"
+    },
+    {
+      "id": "plan",
+      "title": "Choose your plan",
+      "icon": "/assets/sections/plan/step-icon.png"
+    },
+    {
+      "id": "sensors",
+      "title": "Choose your sensors",
+      "icon": "/assets/sections/sensors/step-icon.png"
+    },
+    {
+      "id": "protection",
+      "title": "Add extra protection",
+      "icon": "/assets/sections/protection/step-icon.png"
+    }
+  ],
+  "shipping": {
+    "label": "Fast Shipping",
+    "originalPrice": 599,
+    "price": 0
+  },
+  "financingLabel": "as low as $19.19/mo",
+  "storageKey": "wyze-bundle-builder:saved-system",
+  "storageVersion": 1
+}

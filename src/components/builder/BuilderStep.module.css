@@ -1,0 +1,204 @@
+/* Collapsed step: white row between hairline dividers (reference: web.png).
+   One divider sits below the step label (above the heading) and one below the
+   heading row — consistent across all four steps. */
+.step {
+  background: transparent;
+}
+
+.step:not(.expanded) {
+  border-bottom: 1px solid var(--color-divider);
+}
+
+/* Figma-confirmed (Phase 4): Gilroy-Medium 12px / 100% / 1.6px, #484848 */
+.stepLabel {
+  margin: 0;
+  padding: 12px 0 9px;
+  font-family: var(--font-gilroy-medium);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--color-step-text);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.headerWrap {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 18px 0;
+  background: none;
+  border: none;
+  text-align: left;
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.headerRight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.count {
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Collapsed steps hide the count on desktop/tablet; mobile shows it (mobile.png) */
+.countCollapsed {
+  display: none;
+}
+
+.chevron {
+  color: var(--color-primary);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Expanded step: light blue section with rounded corners (reference: web.png) */
+.step.expanded {
+  background: var(--color-section-bg);
+  border-radius: var(--radius-panel);
+  padding: 0 var(--section-padding) var(--section-padding);
+  margin-bottom: 8px;
+}
+
+.step.expanded .stepLabel {
+  border-bottom-color: #d9dde8;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--card-gap);
+}
+
+/* Center a trailing odd card on its own row at card width (web.png, 5th camera) */
+.grid > :nth-child(odd):last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - var(--card-gap) / 2);
+}
+
+.nextButton {
+  align-self: center;
+  background: transparent;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-button);
+  color: var(--color-primary);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 9px 22px;
+  margin-top: 4px;
+}
+
+.nextButton:hover {
+  background: rgba(78, 47, 210, 0.06);
+}
+
+/* Tablet: all cards in one horizontal row (reference: web-full.png) */
+@media (max-width: 1099px) and (min-width: 700px) {
+  .grid {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .grid > :nth-child(odd):last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
+  }
+}
+
+/* Mobile: single-column cards, counts visible when collapsed (mobile.png).
+   Step separators run edge-to-edge (the page drops horizontal padding); text
+   keeps a 15px inset. Each header carries its own 0.5px #1F1F1F top/bottom
+   borders (Figma spec); labels sit outside the bordered container, so no
+   double borders occur between adjacent steps. */
+@media (max-width: 699px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid > :nth-child(odd):last-child {
+    grid-column: auto;
+    justify-self: stretch;
+    width: auto;
+  }
+
+  .countCollapsed {
+    display: inline;
+  }
+
+  .step:not(.expanded) {
+    border-bottom: none;
+  }
+
+  /* Figma-confirmed: 10px label, 3px gap to the bordered header container */
+  .stepLabel {
+    font-size: 10px;
+    padding: 14px 15px 3px;
+    border-bottom: none;
+  }
+
+  .headerWrap {
+    border-top: 0.5px solid var(--color-text);
+    border-bottom: 0.5px solid var(--color-text);
+  }
+
+  /* Figma-confirmed: 60px container, 20px vertical / 15px horizontal padding */
+  .header {
+    padding: 20px 15px;
+    min-height: 60px;
+    gap: 10px;
+  }
+
+  /* Figma-confirmed (Phase 4): Gilroy-SemiBold 18px / 100% / 0px, #0B0D10.
+     font-weight 600 selects the SemiBold face once Gilroy files are added and
+     keeps the Montserrat fallback visually semibold (Figma reports 400 only
+     because the weight is baked into the family name). */
+  .title {
+    font-family: var(--font-gilroy-semibold);
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 0;
+    color: var(--color-heading-dark);
+  }
+
+  /* Expanded section goes full-bleed; inner content keeps the 15px inset */
+  .step.expanded {
+    border-radius: 0;
+    padding: 0 0 15px;
+    margin-bottom: 0;
+  }
+
+  .step.expanded .stepLabel {
+    border-bottom: none;
+  }
+
+  .body {
+    padding: 0 15px;
+  }
+}

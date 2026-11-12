@@ -1,0 +1,64 @@
+.page {
+  /* 1200px content + 2×16px gutters: at 1439px the content is exactly 1200px
+     wide (matching the reference), while narrow viewports keep the gutters. */
+  max-width: calc(var(--container-max-width) + 32px);
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+}
+
+/*
+ * Mobile-only page heading. Typography confirmed from Figma: Gilroy-Bold,
+ * 31.88px, 110% line height, -0.06px letter spacing, centered. Gilroy itself
+ * is not bundled (commercial); the heading font stack falls back to
+ * Montserrat until licensed files are added (see public/fonts/README.txt).
+ */
+.mobileHeading {
+  display: none;
+  margin: 4px 0 20px;
+  font-family: var(--font-heading);
+  font-size: var(--heading-mobile-size);
+  font-weight: 700;
+  line-height: var(--heading-mobile-line-height);
+  letter-spacing: var(--heading-mobile-letter-spacing);
+  text-align: center;
+  color: var(--color-text);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--review-width);
+  gap: var(--column-gap);
+  align-items: start;
+}
+
+.reviewColumn {
+  position: sticky;
+  top: 24px;
+}
+
+/* Tablet & mobile: review panel stacks below the builder */
+@media (max-width: 1099px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reviewColumn {
+    position: static;
+  }
+}
+
+@media (max-width: 699px) {
+  .mobileHeading {
+    display: block;
+  }
+
+  /* Full-bleed mobile: step separators and the review section reach the
+     viewport edges; inner components provide their own 15–20px insets. */
+  .page {
+    padding: 20px 0 0;
+  }
+
+  .layout {
+    gap: 24px;
+  }
+}
