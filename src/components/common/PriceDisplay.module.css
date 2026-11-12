@@ -28,7 +28,7 @@
 }
 
 /* Review panel: gray strikethrough, purple current price.
-   Figma-confirmed (Phase 4): struck original matches the current price size. */
+   Figma-confirmed: struck original matches the current price size. */
 .review .original {
   color: var(--color-text-muted-2);
   font-size: 15px;

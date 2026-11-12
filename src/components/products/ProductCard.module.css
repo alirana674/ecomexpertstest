@@ -50,7 +50,7 @@
   white-space: nowrap;
 }
 
-/* Figma-confirmed (Phase 4): Gilroy-Medium 12px / 130% / 0.6px, incl. Learn More */
+/* Figma-confirmed: Gilroy-Medium 12px / 130% / 0.6px, incl. Learn More */
 .description {
   margin: 0;
   font-family: var(--font-gilroy-medium);

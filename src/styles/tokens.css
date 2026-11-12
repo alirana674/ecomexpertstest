@@ -1,6 +1,6 @@
 /*
- * Design tokens measured from the supplied Figma screenshots (screenshots/).
- * Colors were pixel-sampled from web.png (1439px artboard).
+ * Design tokens measured from the supplied Figma reference artboards.
+ * Colors were pixel-sampled from the 1439px desktop artboard.
  * Typography sizes other than the mobile heading are estimates and may be
  * adjusted here without touching component styles.
  */
@@ -22,7 +22,7 @@
   --color-page-bg: #ffffff;
   --color-card-bg: #ffffff;
   --color-divider: #e2e4e9;
-  /* Figma-confirmed text colors (Phase 4 specs) */
+  /* Figma-confirmed text colors */
   --color-step-text: #484848;
   --color-heading-dark: #0b0d10;
   --color-group-label: #a8b2bd;
@@ -52,7 +52,7 @@
   --text-xl: 22px; /* step titles */
   --text-2xl: 28px; /* review panel title */
 
-  /* Layout — Figma-confirmed card specs (Phase 4), measured column widths */
+  /* Layout — Figma-confirmed card specs, measured column widths */
   --container-max-width: 1200px;
   --builder-width: 770px;
   --review-width: 400px;

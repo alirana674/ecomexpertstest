@@ -70,12 +70,10 @@ public/
     badges/      # satisfaction guarantee seal
   fonts/         # drop-in location for licensed Gilroy files (see Typography)
 tests/e2e/       # Playwright specs (core, builder, mobile)
-screenshots/     # supplied design references (NOT used at runtime)
-product-pictures/# original supplied images   (NOT used at runtime)
 ```
 
-The app loads every runtime asset from `public/assets/`; `screenshots/` and
-`product-pictures/` are reference-only and can be removed without breaking anything.
+Every runtime asset is loaded from `public/assets/`; the application has no
+dependency on any external design files.
 
 ## Architecture
 
